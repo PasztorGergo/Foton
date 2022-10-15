@@ -1,0 +1,4 @@
+.btn {
+  @apply border-none outline-none transition-all rounded-md ease-in-out hover:rounded px-3 py-2 uppercase text-white font-bold;
+  background: linear-gradient(95.82deg, #3b82f6 -11.75%, #3bf6eb 106.41%);
+}
