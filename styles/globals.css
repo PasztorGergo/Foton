@@ -4,5 +4,5 @@
 
 html,
 body {
-  @apply bg-dark;
+  @apply bg-dark text-white font-inter;
 }

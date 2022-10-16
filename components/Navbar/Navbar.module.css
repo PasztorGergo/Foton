@@ -1,0 +1,9 @@
+.nav {
+  @apply flex items-center justify-between px-8 h-[10vh];
+}
+.brand {
+  @apply font-bold text-3xl;
+}
+.links {
+  @apply flex grow-[0.2] justify-between items-center font-bold;
+}

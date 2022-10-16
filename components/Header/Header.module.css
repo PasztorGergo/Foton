@@ -1,0 +1,17 @@
+.header {
+  @apply h-[90vh] flex flex-col items-center justify-around md:pt-32;
+}
+.title {
+  @apply font-bold text-8xl text-center;
+}
+.subtitle {
+  @apply font-normal text-base text-center;
+}
+.header p {
+  @apply text-xl w-[40%] text-center;
+}
+.highlight {
+  @apply text-transparent font-bold;
+  background: linear-gradient(95.82deg, #3b82f6 -11.75%, #3bf6eb 106.41%);
+  background-clip: text;
+}

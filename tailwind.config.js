@@ -12,6 +12,9 @@ module.exports = {
         mid: "#CBD5E1",
         light: "#F8FAFC",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
