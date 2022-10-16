@@ -16,7 +16,7 @@ export default function BluryImage({ src, alt, href }: Props) {
   return (
     <a
       href={href}
-      className="aspect-w-1 aspect-h-2 block overflow-hidden rounded-lg w-full"
+      className="aspect-w-1 aspect-h-1 w-44 block overflow-hidden rounded-lg"
     >
       <Image
         src={src}

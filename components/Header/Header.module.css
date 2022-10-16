@@ -10,8 +10,3 @@
 .header p {
   @apply text-xl w-[40%] text-center;
 }
-.highlight {
-  @apply text-transparent font-bold;
-  background: linear-gradient(95.82deg, #3b82f6 -11.75%, #3bf6eb 106.41%);
-  background-clip: text;
-}

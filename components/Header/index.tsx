@@ -10,9 +10,9 @@ const Header = () => {
         <h6 className={s.subtitle}>WordPress Agency</h6>
       </div>
       <p>
-        Creating <span className={s.highlight}>top-notch</span> WordPress
-        websites with an out-maxed appearance to{" "}
-        <span className={s.highlight}>win over</span> customers as fast as a
+        Creating <span className="highlight">top-notch</span> WordPress websites
+        with an out-maxed appearance to{" "}
+        <span className="highlight">win over</span> customers as fast as a
         photon.
       </p>
       <Button>Get in touch</Button>

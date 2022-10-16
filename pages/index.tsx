@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components";
+import { Header, Partners } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -40,7 +40,9 @@ const Home: NextPage = () => {
         ></meta>
       </Head>
       <Header />
-      <main></main>
+      <main className="px-8">
+        <Partners />
+      </main>
     </>
   );
 };

@@ -6,7 +6,7 @@ const SideBar = () => {
       <ul className="flex gap-x-7  justify-evenly">
         <li className="group ">
           <a
-            className="group-hover:opacity-100 opacity-70 transition-opacity"
+            className="group-hover:opacity-100 opacity-70 transition-opacity font-bold"
             href="https://twitter.com/Foton"
           >
             Twitter
@@ -14,7 +14,7 @@ const SideBar = () => {
         </li>
         <li className="group ">
           <a
-            className="group-hover:opacity-100 opacity-70 transition-opacity"
+            className="group-hover:opacity-100 opacity-70 transition-opacity font-bold"
             href="https://linkedin.com/Foton"
           >
             LinkedIn
