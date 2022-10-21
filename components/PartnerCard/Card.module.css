@@ -1,0 +1,21 @@
+.card {
+  @apply rounded-lg bg-white flex flex-col md:flex-row overflow-hidden  max-w-[60%];
+}
+.cardBody {
+  @apply w-3/5 flex flex-col p-6;
+}
+.cardBody h2 {
+  @apply font-bold text-2xl capitalize;
+}
+.cardBody {
+  @apply text-dark max-h-fit;
+}
+.card.right * {
+  @apply text-right;
+}
+.card.right {
+  @apply md:flex-row-reverse;
+}
+.image {
+  @apply w-2/5 overflow-hidden;
+}

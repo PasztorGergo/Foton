@@ -12,8 +12,7 @@ const Header = () => {
       <p>
         Creating <span className="highlight">top-notch</span> WordPress websites
         with an out-maxed appearance to{" "}
-        <span className="highlight">win over</span> customers as fast as a
-        photon.
+        <span className="highlight">win over</span> customers lightning fast.
       </p>
       <Button>Get in touch</Button>
     </header>

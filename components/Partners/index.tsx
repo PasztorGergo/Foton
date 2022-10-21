@@ -1,18 +1,57 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import BluryImage from "../BluryImage";
 import { motion, useAnimation } from "framer-motion";
 import s from "./Partners.module.css";
 import { useInView } from "react-intersection-observer";
+import PartnerCard from "../PartnerCard";
 
 const Partners = () => {
   const control = useAnimation();
   const { ref, inView } = useInView();
+  const partners = useMemo(
+    () => [
+      {
+        name: "Ali Tashi",
+        href: "",
+        src: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/11695666/original/13266062_1135040773213814_396911622858938400_n.jpg",
+        description: (
+          <>
+            <p>
+              Having been working for +8 years with WordPress websites, Ali is
+              an expert in this field.
+            </p>
+            <p>He is proud of having over 2500 websites under his belt.</p>
+            <p>Let your website be the next masterpiece made by him!</p>
+          </>
+        ),
+      },
+      {
+        name: "Hamza Chohan",
+        href: "",
+        src: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/2d11d5485bd8fa86e6c6c74078cd088c-1620419132627/c62842fa-5b0f-4440-b6ac-fecae720f938.jpeg",
+        description: (
+          <>
+            <p>
+              Having been working for +8 years with WordPress websites, Ali is
+              an expert in this field.
+            </p>
+            <p>He is proud of having over 2500 websites under his belt.</p>
+            <p>Let your website be the next masterpiece made by him!</p>
+          </>
+        ),
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
-    control.start((e: number) => ({
-      translateX: 0,
-      opacity: 1,
-    }));
+    if (inView) {
+      control.start((e: number) => ({
+        opacity: 1,
+        translateY: 0,
+        transition: { delay: e * 0.2 },
+      }));
+    }
   }, [inView]);
   return (
     <section className={s.section}>
@@ -21,70 +60,23 @@ const Partners = () => {
         To get your order not only done, but finished by{" "}
         <span className="highlight">senior developers</span>, we collaborate
         with the professionals below who are on the verge to build an
-        <span className="highlight">out-of-the-way</span> masterpiece.
+        <span className="highlight"> out-of-the-way</span> masterpiece.
       </p>
       <div
-        className="flex flex-col md:flex-row w-full h-screen px-36"
+        className="flex flex-col w-full gap-y-32 h-screen px-36 mt-12"
         ref={ref}
       >
-        <motion.div
-          custom={0}
-          animate={control}
-          initial={{ opacity: 0, translateX: "50%" }}
-        >
-          <BluryImage
-            alt=""
-            src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/11695666/original/13266062_1135040773213814_396911622858938400_n.jpg"
-          ></BluryImage>
-          <motion.h3
-            animate={control}
-            initial={{ opacity: 0, translateX: "50%" }}
-            custom={1}
+        {partners.map(({ description, href, name, src }, i) => (
+          <PartnerCard
+            href={href}
+            name={name}
+            src={src}
+            direction={i % 2 !== 0 && "right"}
+            key={i}
           >
-            a
-          </motion.h3>
-          <motion.p
-            animate={control}
-            initial={{ opacity: 0, translateX: "50%" }}
-            custom={2}
-          >
-            a
-          </motion.p>
-        </motion.div>
-        <motion.div
-          custom={3}
-          animate={control}
-          initial={{ opacity: 0, translateX: "50%" }}
-        >
-          <BluryImage alt="" src=""></BluryImage>
-          <motion.h3
-            animate={control}
-            initial={{ opacity: 0, translateX: "50%" }}
-            custom={4}
-          ></motion.h3>
-          <motion.p
-            animate={control}
-            initial={{ opacity: 0, translateX: "50%" }}
-            custom={5}
-          ></motion.p>
-        </motion.div>
-        <motion.div
-          custom={6}
-          animate={control}
-          initial={{ opacity: 0, translateX: "50%" }}
-        >
-          <BluryImage alt="" src=""></BluryImage>
-          <motion.h3
-            animate={control}
-            initial={{ opacity: 0, translateX: "50%" }}
-            custom={7}
-          ></motion.h3>
-          <motion.p
-            animate={control}
-            initial={{ opacity: 0, translateX: "50%" }}
-            custom={8}
-          ></motion.p>
-        </motion.div>
+            {description}
+          </PartnerCard>
+        ))}
       </div>
     </section>
   );
