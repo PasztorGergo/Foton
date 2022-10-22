@@ -4,6 +4,15 @@ import { motion, useAnimation } from "framer-motion";
 import s from "./Partners.module.css";
 import { useInView } from "react-intersection-observer";
 import PartnerCard from "../PartnerCard";
+import {
+  FaWordpress,
+  FaHtml5,
+  FaCss3,
+  FaPhp,
+  FaJsSquare,
+  FaWeebly,
+} from "react-icons/fa";
+import { SiWoocommerce } from "react-icons/si";
 
 const Partners = () => {
   const control = useAnimation();
@@ -24,6 +33,17 @@ const Partners = () => {
             <p>Let your website be the next masterpiece made by him!</p>
           </>
         ),
+        skills: (
+          <>
+            <FaWordpress />
+            <FaHtml5 />
+            <FaCss3 />
+            <FaPhp />
+            <FaJsSquare />
+            <FaWeebly />
+            <SiWoocommerce />
+          </>
+        ),
       },
       {
         name: "Hamza Chohan",
@@ -37,6 +57,12 @@ const Partners = () => {
             </p>
             <p>He is proud of having over 2500 websites under his belt.</p>
             <p>Let your website be the next masterpiece made by him!</p>
+          </>
+        ),
+        skills: (
+          <>
+            <FaWordpress />
+            <FaHtml5 />
           </>
         ),
       },
@@ -54,8 +80,8 @@ const Partners = () => {
     }
   }, [inView]);
   return (
-    <section className={s.section}>
-      <h2 className={s.title}>With the experts</h2>
+    <section className={s.section} id="partners">
+      <h2 className="title">With the experts</h2>
       <p className={s.parag}>
         To get your order not only done, but finished by{" "}
         <span className="highlight">senior developers</span>, we collaborate
@@ -63,16 +89,18 @@ const Partners = () => {
         <span className="highlight"> out-of-the-way</span> masterpiece.
       </p>
       <div
-        className="flex flex-col w-full gap-y-32 h-screen px-36 mt-12"
+        className="flex flex-col w-full gap-y-24 h-screen px-36 mt-24"
         ref={ref}
       >
-        {partners.map(({ description, href, name, src }, i) => (
+        {partners.map(({ description, href, name, src, skills }, i) => (
           <PartnerCard
             href={href}
             name={name}
             src={src}
             direction={i % 2 !== 0 && "right"}
             key={i}
+            custom={i}
+            skills={skills}
           >
             {description}
           </PartnerCard>

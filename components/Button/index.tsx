@@ -4,11 +4,16 @@ import s from "./Button.module.css";
 type Props = {
   children: any;
   onClick?: any;
+  type?: "submit" | "reset" | "button";
 };
 
-export default function Button({ children, onClick }: Props) {
+export default function Button({ children, onClick, type }: Props) {
   return onClick ? (
-    <button onClick={(e) => onClick(e)} className={s.btn}>
+    <button
+      type={type ?? "button"}
+      onClick={(e) => onClick(e)}
+      className={s.btn}
+    >
       {children}
     </button>
   ) : (

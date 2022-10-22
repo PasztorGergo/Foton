@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ["fiverr-res.cloudinary.com"],
   },
+  env: {
+    SENDGRID_KEY: process.env.SENDGRID_KEY,
+  },
 };
 
 module.exports = nextConfig;

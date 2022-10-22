@@ -16,7 +16,8 @@ export default function BluryImage({ src, alt, href }: Props) {
   return (
     <a
       href={href}
-      className="aspect-w-1 aspect-h-1 h-full block overflow-hidden"
+      className="aspect-w-1 aspect-h-1 h-full block overflow-hidden group relative"
+      title="View my work"
     >
       <Image
         src={src}
@@ -24,7 +25,7 @@ export default function BluryImage({ src, alt, href }: Props) {
         layout="fill"
         objectFit="cover"
         className={cn(
-          "duration-300 ease-in-out",
+          "duration-300 ease-in-out peer",
           isLoading
             ? "grayscale scale-110 blur-2xl"
             : "grayscale-0 scale-100 blur-none"

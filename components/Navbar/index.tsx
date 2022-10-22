@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import Button from "../Button";
 import s from "./Navbar.module.css";
@@ -11,21 +10,17 @@ const Navbar = () => {
       </h2>
       <ul className={s.links}>
         <li>
-          <Link href="">
-            <a>About</a>
-          </Link>
+          <a>About</a>
         </li>
         <li>
-          <Link href="">
-            <a>Partners</a>
-          </Link>
+          <a href="#partners">Partners</a>
         </li>
         <li>
-          <Link href="">
-            <a>Projects</a>
-          </Link>
+          <a>Projects</a>
         </li>
-        <Button>Contact</Button>
+        <Button>
+          <a href="#contact">Contact</a>
+        </Button>
       </ul>
     </nav>
   );

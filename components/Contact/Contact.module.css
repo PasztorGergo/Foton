@@ -1,0 +1,15 @@
+.section {
+  @apply w-full grid place-items-center mt-24;
+}
+.container {
+  @apply flex flex-col w-full;
+}
+.input {
+  @apply border-b-2 border-b-light border-opacity-25 focus-within:border-opacity-100 transition-all duration-500 outline-none bg-transparent;
+}
+.label {
+  @apply text-sm font-bold uppercase;
+}
+textarea.input {
+  @apply h-32;
+}
